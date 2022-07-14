@@ -1,0 +1,52 @@
+{% block content %}
+<Html>
+<head>
+<title>
+Registration Page
+</title>
+</head>
+<body bgcolor="Lightskyblue">
+<br>
+<br>
+<center>
+    <h1>Registration Form</h1>
+<form action={% url "Register" %} method="POST">
+{% csrf_token %}
+<label> Firstname </label>
+<input type="text" name="firstname" size="15"/> <br> <br>
+<label> Lastname: </label>
+<input type="text" name="lastname" size="15"/> <br> <br>
+
+<label>
+Gender :
+</label><br>
+<input type="radio" name="gender_selection" value="male"/> Male <br>
+<input type="radio" name="gender_selection" value="female"/> Female <br>
+<input type="radio" name="gender_selection" value="other"/> Other
+<br>
+<br>
+
+<label>
+Phone :
+</label>
+<input type="text" name="country code"  value="+91" size="2"/>
+<input type="text" name="phone" size="10"/> <br> <br>
+Address
+<br>
+<textarea cols="30" rows="4" name="address" value="address">
+</textarea>
+<br> <br>
+Email:
+<input type="email" id="email" name="email"/> <br>
+<br> <br>
+Password:
+<input type="Password" id="pass" name="password"> <br>
+<br> <br>
+Re-type password:
+<input type="Password" id="repass" name="repassword"> <br> <br>
+<button type="submit" >Submit</button>
+</form>
+    </center>
+</body>
+</html>
+{% endblock %}

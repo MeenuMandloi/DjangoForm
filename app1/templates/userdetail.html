@@ -1,0 +1,35 @@
+{% block content %}
+    <h1>All Users detail</h1>
+    <table border="2" width="100%">
+    <tr style="color: brown">
+        <td>FirstName</td>
+        <td>LastName</td>
+        <td>Phone</td>
+        <td>Email</td>
+        <td>Gender</td>
+        <td>Address</td>
+        <td>Update</td>
+        <td>Delete</td>
+        </tr>
+    {% for i in user %}
+
+<tr>
+
+    <td>{{ i.firstname }}</td>
+
+   <td> {{ i.lastname }}</td>
+
+   <td>{{i.phone }}</td>
+
+    <td>{{ i.email}}</td>
+
+    <td>{{ i.gender }}</td>
+
+    <td>{{ i.address }}</td>
+    <td> <a href="{% url 'update' i.id %}">Update</a></td>
+    <td><a href="{% url 'delete' i.id %}">Delete</a></td>
+        </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}
